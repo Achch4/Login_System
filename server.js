@@ -22,7 +22,7 @@ app.set("views", "./src/views");
 
 // Test route
 app.get("/", (req, res) => {
-  res.send("server is running");
+  res.redirect("/login");
 });
 app.get("/register", (req, res) => {
   res.render("register", { error: null });
