@@ -5,6 +5,11 @@ A full-stack authentication system built with Node.js, Express, MongoDB and EJS.
 ## Live Demo
 🔗 [https://login-system-fhto.onrender.com](https://login-system-fhto.onrender.com)
 
+## Screenshot
+<img width="513" height="458" alt="image" src="https://github.com/user-attachments/assets/6e861195-e407-493b-a083-c858600d61f2" />
+<img width="454" height="517" alt="image" src="https://github.com/user-attachments/assets/1c061487-dfbc-434f-8076-10c9ed92e278" />
+<img width="705" height="416" alt="image" src="https://github.com/user-attachments/assets/9fa938ae-6140-4893-b79d-e6ef4c9b7cfb" />
+
 ## Features
 - User registration with input validation
 - Secure login with password hashing (bcrypt)
@@ -70,8 +75,4 @@ login-system/
 ├── package.json
 └── server.js
 ```
-## Screenshot
-<img width="513" height="458" alt="image" src="https://github.com/user-attachments/assets/6e861195-e407-493b-a083-c858600d61f2" />
-<img width="454" height="517" alt="image" src="https://github.com/user-attachments/assets/1c061487-dfbc-434f-8076-10c9ed92e278" />
-<img width="705" height="416" alt="image" src="https://github.com/user-attachments/assets/9fa938ae-6140-4893-b79d-e6ef4c9b7cfb" />
 
