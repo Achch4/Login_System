@@ -1,5 +1,6 @@
 import { User } from "../models/user.js";
 import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 // EXPORT this function so authRoutes.js can use it
 export const register = async (req, res) => {
@@ -76,7 +77,22 @@ export const login = async (req, res) => {
         error: "Invalid password",
       });
     }
-    res.render("dashboard", { username: user.username }); //success
+    //jwt
+    const token = jwt.sign(
+      { userId: user.id, username: user.username },process.env.JWT_SECRET,{// sign the user with the token
+        expiresIn: "5s",
+      },
+    );
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      //secure: true,
+      //maxAge: 1000000,
+      //signed: true,
+    });
+
+    res.redirect("/api/dashboard"); //success
+    // Inside login route
   } catch (error) {
     res.render("login", {
       error: "Something went wrong. Please try again.",

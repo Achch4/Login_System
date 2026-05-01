@@ -2,7 +2,7 @@ import express from "express";
 import connectDB from "./src/config/db.js";
 import dotenv from "dotenv";
 import authRoutes from "./src/routes/authRoutes.js";
-
+import cookieParser from "cookie-parser";
 dotenv.config();
 
 const app = express();
@@ -12,11 +12,13 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Middleware to parse JSON,pass the HTML form
+app.use(cookieParser());// put jwt in users cookie
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", authRoutes);
 
-//Use EJS for views
+
+//EJS for views
 app.set("view engine", "ejs");
 app.set("views", "./src/views");
 
